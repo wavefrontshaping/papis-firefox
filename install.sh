@@ -23,11 +23,6 @@ echo $dir
 mkdir -p $dir
 
 
-#if [[ ! -e $dir ]]; then
-#    mkdir $dir
-#elif [[ ! -d $dir ]]; then
-#    echo "$dir already exists but is not a directory" 1>&2
-#fi
 echo "Copying the connector app to $dir"
 chmod +x ./app/papis_connector.py
 cp ./app/papis_connector.py $dir
