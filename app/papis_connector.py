@@ -6,6 +6,19 @@ import re
 import json
 import struct
 
+def findDOI(text):
+  doi_patterns = [
+    r"(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\"&\'])\S)+)",
+    r"(10.\d{4,9}/[-._;()/:A-Z0-9]+)",
+    r"(10.\d{4}/\d+-\d+X?(\d+)\d+<[\d\w]+:[\d\w]*>\d+.\d+.\w+;\d)",
+    r"(10.1021/\w\w\d+)",
+    r"(10.1207/[\w\d]+\&\d+_\d+)"
+  ]
+  for pattern in doi_patterns:
+    match = re.search(pattern,text)
+    if match:
+      return match.group()
+  return None
 
 def papisCommand(receivedMessage):
   if receivedMessage.startswith('papis:'):
@@ -14,11 +27,18 @@ def papisCommand(receivedMessage):
       url = match.group(1)
           
       command_pre = "gnome-terminal -- bash -c "
-      command_line = "papis add --from-url %s" % url
       command_end= ";read -p \"Press any key to close.\""
 
+      doi = findDOI(url)
+      if doi:
+        command_line = "papis add --from-doi %s" % doi
+      else:
+        command_line = "papis add --from-url %s" % url
+
+      statement = "echo $\"Executing command: %s\n\";" % command_line#\\\n';";#\'Executing command: \'";#"+command_line+"\';echo;echo;"
+
       sendMessage(encodeMessage("Papis connector executing command: %s" % command_line))
-      process = subprocess.Popen(shlex.split(' '.join([command_pre,'\'',command_line,command_end,'\''])))
+      process = subprocess.Popen(shlex.split(' '.join([command_pre,'\'',statement,command_line,command_end,'\''])))
       process.wait()
 
 try:

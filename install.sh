@@ -4,11 +4,11 @@ DEFAULT_PATH=/opt/papis-connector
 
 echo "This will install Papis connector app and package the Firefox web extension."
 while true; do
-    read -r -p "Do you wish to continue? [y/N]" yn
+    read -r -p "Do you wish to continue? [Y/n]" yn
     case $yn in
         [Yy]* ) break;;
         [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
+        * ) break;;
     esac
 done
 
