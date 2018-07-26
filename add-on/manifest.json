@@ -19,11 +19,33 @@
 
   "background": {
     "scripts": ["background.js"]
-  },
+  }	,
 
   "browser_action": {
     "browser_style": true,
-    "default_icon": "icons/paper.svg"
+    "default_icon": "icons/paper.svg",
+    "theme_icons": [
+      {
+        "light": "icons/dark-paper.svg",
+        "dark": "icons/paper.svg",
+        "size": 16
+      },
+      {
+        "light": "icons/dark-paper.svg",
+        "dark": "icons/paper.svg",
+        "size": 32
+      },
+      {
+        "light": "icons/dark-paper.svg",
+        "dark": "icons/paper.svg",
+        "size": 64
+      },
+      {
+        "light": "icons/dark-paper.svg",
+        "dark": "icons/paper.svg",
+        "size": 96
+      }
+    ]
   },
   
   "permissions": [
