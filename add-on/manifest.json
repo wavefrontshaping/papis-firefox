@@ -3,7 +3,7 @@
   "description": "Add paper to papis from current url.",
   "manifest_version": 2,
   "name": "Papis",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "icons": {
     "32": "icons/paper.svg",
     "48": "icons/paper.svg",
