@@ -5,12 +5,15 @@
   "name": "Papis",
   "version": "0.1",
   "icons": {
-    "48": "icons/message.svg"
+    "32": "icons/paper.svg",
+    "48": "icons/paper.svg",
+    "64": "icons/paper.svg",
+    "96": "icons/paper.svg"
   },
 
   "applications": {
     "gecko": {
-      "id": "papis_connector@wavefrontshaping.net",
+      "id": "papis_connector@papis",
       "strict_min_version": "50.0"
     }
   },
@@ -20,7 +23,7 @@
   },
 
   "browser_action": {
-    "default_icon": "icons/message.svg"
+    "default_icon": "icons/paper.svg"
   },
   
   "permissions": [
