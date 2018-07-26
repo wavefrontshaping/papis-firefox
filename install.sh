@@ -30,7 +30,7 @@ cp ./app/papis_connector.py $dir
 ## Now replace the path value in the json file
 echo "Editing and copying json file to mozilla local folder"
 cp ./app/papis_connector.json temp.json
-sed -i "s|^\(\s*"path"\s*:\s*\).*,$|\1$dir|" temp.json
+sed -i "s|^\(\s*\"*path\"\s*:\s*\).*,\s*$|\1\"$dir/papis_connector.json\",|" temp.json
 mkdir -p ~/.mozilla/native-messaging-hosts
 mv temp.json ~/.mozilla/native-messaging-hosts/papis_connector.json
 
