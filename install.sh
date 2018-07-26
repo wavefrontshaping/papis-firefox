@@ -19,7 +19,6 @@ echo "(default is ${DEFAULT_PATH})"
 read -p "" dir
 # if no input, use default
 [[ -z "${dir// }" ]] && dir=$DEFAULT_PATH
-echo $dir
 mkdir -p $dir
 
 
@@ -30,7 +29,7 @@ cp ./app/papis_connector.py $dir
 ## Now replace the path value in the json file
 echo "Editing and copying json file to mozilla local folder"
 cp ./app/papis_connector.json temp.json
-sed -i "s|^\(\s*\"*path\"\s*:\s*\).*,\s*$|\1\"$dir/papis_connector.json\",|" temp.json
+sed -i "s|^\(\s*\"*path\"\s*:\s*\).*,\s*$|\1\"$dir/papis_connector.py\",|" temp.json
 mkdir -p ~/.mozilla/native-messaging-hosts
 mv temp.json ~/.mozilla/native-messaging-hosts/papis_connector.json
 

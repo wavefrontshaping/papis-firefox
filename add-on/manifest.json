@@ -3,14 +3,13 @@
   "description": "Add paper to papis from current url.",
   "manifest_version": 2,
   "name": "Papis",
-  "version": "0.1",
+  "version": "0.1.1",
   "icons": {
     "32": "icons/paper.svg",
     "48": "icons/paper.svg",
     "64": "icons/paper.svg",
     "96": "icons/paper.svg"
   },
-
   "applications": {
     "gecko": {
       "id": "papis_connector@papis",
@@ -23,6 +22,7 @@
   },
 
   "browser_action": {
+    "browser_style": true,
     "default_icon": "icons/paper.svg"
   },
   
