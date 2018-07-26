@@ -4,7 +4,7 @@
 papis-firefox is a Firefox add-on for integration with [Papis](https://github.com/papis/papis), a powerful command-line bibliography manager for Linux.
 It allows to add an entry in Papis using the url of the current page.
 It installs a button in the navigation bars that simply executes in a new terminal the command:
-`papis add --from-url <url>`with <url> `<url>` being the url of the current tab.
+`papis add --from-url <url>`with <url> `<url>` being the url of the current tab or `papis add --from-doi <doi>` if a DOI is found in the url.
   
  Due to the security restrictions on web extensions, the add-on cannot execute the command itself.
  It requires a connector app written in Python.
