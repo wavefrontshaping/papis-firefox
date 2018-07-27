@@ -22,26 +22,21 @@ Two ways:
 Or,
 
 2. Create a zip from the source:
-
 ```
 cd add-on
 zip -r -FS ../papis-firefox.zip *
 ```
-
-The `.zip` package can then be installed through the **Add-ons** section of the Firefox menu.
-Simply launch the install.sh script and follow the instructions.
+>The `.zip` package can then be installed through the **Add-ons** section of the Firefox menu.
 If you choose this method, the add-on would not be signed.
 To be installed, it is required to change the parameter `xpinstall.signatures.required preference`to false in [about:config](about:config). 
-**Note that this change may create a security vulnerability on your system, use it at your own risks.**
+**Note that this change may create a security vulnerability on your system, use it at your own risks. Prefer the first option if you have no reason to do otherwise.**
 
 ## Installation of the Papis connector script
 
-Copy the content of the script folder to your local papis script folder, for instance `~/.papis` or `~/.config/papis/scripts'.
+Copy the content of the `script` folder to your local papis script folder, for instance `~/.papis` or `~/.config/papis/scripts`.
 Then execute the command:
 
 ```
 papis install-webext
 ```
 It will create a `papis_connector.json` file and copy it in the `.mozilla` local folder to allow the Firefox add-on to communicate with the connector app.
-
-
