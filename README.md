@@ -31,6 +31,8 @@ If you choose this method, the add-on would not be signed.
 To be installed, it is required to change the parameter `xpinstall.signatures.required preference`to false in [about:config](about:config). 
 **Note that this change may create a security vulnerability on your system, use it at your own risks. Prefer the first option if you have no reason to do otherwise.**
 
+Then restart Firefox.
+
 ## Installation of the Papis connector script
 
 Copy the content of the `script` folder to your local papis script folder, for instance `~/.papis` or `~/.config/papis/scripts`.
