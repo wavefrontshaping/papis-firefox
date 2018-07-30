@@ -11,8 +11,6 @@ Due to the security restrictions on web extensions, the add-on cannot execute th
 It requires a connector app written in Python.
 The web extension sends thes url to the connector app, using *native messaging*, that executes the command.
 
-
-
 ## Installation of the Firefox add-on
 
 Two ways:
@@ -31,8 +29,6 @@ If you choose this method, the add-on would not be signed.
 To be installed, it is required to change the parameter `xpinstall.signatures.required preference`to false in [about:config](about:config). 
 **Note that this change may create a security vulnerability on your system, use it at your own risks. Prefer the first option if you have no reason to do otherwise.**
 
-Then restart Firefox.
-
 ## Installation of the Papis connector script
 
 Copy the content of the `script` folder to your local papis script folder, for instance `~/.papis` or `~/.config/papis/scripts`.
@@ -41,4 +37,4 @@ Then execute the command:
 ```
 papis install-webext
 ```
-It will create a `papis_connector.json` file and copy it in the `.mozilla` local folder to allow the Firefox add-on to communicate with the connector app.
+It will create a `papis_connector.json` file and copy it in the `.mozilla` local folder to allow the Firefox add-on to communicate with the connector app. Then restart Firefox and you are done.
